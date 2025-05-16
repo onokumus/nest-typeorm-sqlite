@@ -28,14 +28,17 @@ This project is a CRUD (Create, Read, Update, Delete) API built with Nest.js, Ty
    ```bash
    git clone https://github.com/onokumus/nest-typeorm-sqlite.git
    cd nest-typeorm-sqlite
+   ```
 
 2. **Install Dependencies**
     ```bash
     npm i
+    ```
 
 3. **Run the Application**
     ```bash
     npm run start:dev
+    ```
 
 
 ## API Endpoints
@@ -47,3 +50,32 @@ This project is a CRUD (Create, Read, Update, Delete) API built with Nest.js, Ty
 | GET    | /users/:id | Get a user by ID  | - |
 | PUT    | /users/:id | Update a user by ID| `{"name":"David","email":"david@example.com"}` |
 | DELETE | /users/:id | Delete a user by ID| - |
+
+
+### Example Requests
+
+#### Create a User:
+```bash
+curl -X POST http://localhost:3000/users -H "Content-Type: application/json" -d '{"name":"Osman","email":"osman@example.com"}'
+```
+
+
+#### List All Users:
+```bash
+curl http://localhost:3000/users
+```
+
+#### Get a User by ID:
+```bash
+curl http://localhost:3000/users/1
+```
+
+#### Update a User:
+```bash
+curl -X PUT http://localhost:3000/users/1 -H "Content-Type: application/json" -d '{"name":"David","email":"david@example.com"}'
+```
+
+#### Delete a User:
+```bash
+curl -X DELETE http://localhost:3000/users/1
+```
